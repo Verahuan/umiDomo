@@ -16,7 +16,9 @@ export default (state=defaultState,action:any)=>{
   }
   if(action.type===Click_Change){
     const newState:{}=_.cloneDeep(state)
-    newState.List.push(newState.inputValue)
+    if(newState.inputValue!==""){
+      newState.List.push(newState.inputValue)
+    }
     newState.inputValue="";
     return newState;
   }
