@@ -1,11 +1,10 @@
 import _ from "lodash";
-import { Input_Change,Click_Change,Click_Delete} from "@/store/actionTypes"
+import { Input_Change, Click_Change, Click_Delete, Init_List } from '@/store/actionTypes';
 //改为下面的引入
 
 const defaultState={
-  inputValue:"",
-  List:[
-  ]
+  inputValue:"123",
+  List:["huanhuan","frist","time","study"]
 }
 
 export default (state=defaultState,action:any)=>{
@@ -25,6 +24,11 @@ export default (state=defaultState,action:any)=>{
   if(action.type===Click_Delete){
     const newState:{}=_.cloneDeep(state)
     newState.List.splice(action.value,1)
+    return newState;
+  }
+  if(action.type===Init_List){
+    const newState:{}=_.cloneDeep(state)
+    newState.List=action.value
     return newState;
   }
   return state
