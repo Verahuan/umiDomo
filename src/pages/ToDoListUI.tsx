@@ -8,25 +8,36 @@ export default (props) => {
         value={props.inputValue}
         placeholder="请输入计划"
         style={{
-          width:"300px",
-          margin:"10px"
+          width: '300px',
+          margin: '10px',
         }}
-        onChange={props.handleInPutChange}/>
+        onChange={props.handleInPutChange}
+      />
       <Button
         type="primary"
-        style={{width:"80px"}}
+        style={{ width: '80px' }}
         onClick={props.handleClickChange}
-      >添加</Button>
+      >
+        添加
+      </Button>
       <List
         size="small"
         bordered
         dataSource={props.List}
-        renderItem={(item,index) => <List.Item onClick={()=>{props.handleListClickChange(index)}}
-        >{item}</List.Item>}
+        renderItem={(item, index) => (
+          <List.Item
+            onClick={() => {
+              props.handleListClickChange(index);
+            }}
+          >
+            {item}
+          </List.Item>
+        )}
         style={{
-          margin:"10px",
-          width:"380px"}}
+          margin: '10px',
+          width: '380px',
+        }}
       />
     </div>
   );
-}
+};
