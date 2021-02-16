@@ -6,23 +6,23 @@ export default defineConfig({
     type: 'none',
   },
   routes: [
-    { path: '/',
-      component: '@/pages/index',
-    },
+    { path: '/', component: '@/pages/index' },
     {
-      path:"/ToDoList",component:"@/pages/ToDoList"
+      path: '/ToDoList',
+      component: '@/pages/ToDoList',
     },
-    { path:"/cards", component: "@/pages/components/puzzlecards.tsx"},
-    { path:"/crud", component: "@/pages/crud"}
+    { path: '/puzzlecards', component: '@/pages/components/puzzlecards.tsx' },
+    { path: '/crud', component: '@/pages/crud' },
+    { path: '/new', component: '@/pages/newFeatures' },
   ],
   antd: {},
   dva: {},
   mock: false,
   proxy: {
     '/api': {
-      'target': 'http://public-api-v1.aspirantzhang.com',
-      'changeOrigin': true,
-      'pathRewrite': { '^/api' : '' },
+      target: 'http://public-api-v1.aspirantzhang.com',
+      changeOrigin: true,
+      pathRewrite: { '^/api': '' },
     },
   },
 });
